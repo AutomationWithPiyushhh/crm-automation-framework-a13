@@ -31,6 +31,7 @@ public class GetDataFromExcelFile {
 		System.out.println(value4);
 
 		wb.close();
+		
 		fis.close();
 	}
 }
