@@ -1,21 +1,25 @@
-/**
+/*
  * Project     : Vtiger CRM Automation
  * Author      : AutomationWithPiyush
  * Version     : 0.0.1
  * Description : This class automates the creation of a new Contact in Vtiger CRM.
- * 
- * It performs the following steps:
- *  1. Launches the browser (Chrome/Edge/Firefox)
- *  2. Logs into the Vtiger CRM application
- *  3. Navigates to Contacts module
- *  4. Creates a new contact by entering the Last Name
- *  5. Validates that the contact is successfully created
- *  6. Logs out and closes the browser
+ *
+ * Workflow Summary:
+ * 1. Load configuration from properties file
+ * 2. Launch browser based on config
+ * 3. Log into Vtiger CRM
+ * 4. Navigate to Contacts module
+ * 5. Create a new contact by entering last name
+ * 6. Validate creation
+ * 7. Logout and close browser
  */
 
 package contact;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.time.Duration;
+import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -27,89 +31,110 @@ import org.openqa.selenium.interactions.Actions;
 
 public class CreateContactTest {
 
-	public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
 
-		// -------------------------------
-		// Step 1: Browser Initialization
-		// -------------------------------
-		String browser = "chrome";   // Hardcoded browser type for execution
-		WebDriver driver;
+        // Loading configuration file containing browser, URL, credentials
+        FileInputStream fis = new FileInputStream("./src/test/resources/commondata.properties");
+        Properties pObj = new Properties();
+        pObj.load(fis);
 
-		/**
-		 * Launching the appropriate browser based on the given string.
-		 * Supports: Chrome, Edge, Firefox
-		 */
-		if (browser.equals("chrome")) {
-			driver = new ChromeDriver();
-		} else if (browser.equals("edge")) {
-			driver = new EdgeDriver();
-		} else if (browser.equals("firefox")) {
-			driver = new FirefoxDriver();
-		} else {
-			driver = new ChromeDriver();
-		}
+        // Fetching data from properties file
+        String BROWSER = pObj.getProperty("browser");
+        String URL = pObj.getProperty("url");
+        String USERNAME = pObj.getProperty("un");
+        String PASSWORD = pObj.getProperty("pwd");
 
-		// Maximize browser window and set implicit wait
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        // -------------------------------------------
+        // Step 1: Browser Initialization
+        // -------------------------------------------
+        String browser = BROWSER;  // Selected browser
+        WebDriver driver;
 
-		// -------------------------------
-		// Step 2: Login to Application
-		// -------------------------------
-		driver.get("http://localhost:8888/");
+        /*
+         * Launching browser based on value from properties file.
+         * Supported browsers: chrome, edge, firefox
+         */
+        if (browser.equals("chrome")) {
+            driver = new ChromeDriver();
+        } else if (browser.equals("edge")) {
+            driver = new EdgeDriver();
+        } else if (browser.equals("firefox")) {
+            driver = new FirefoxDriver();
+        } else {
+            // Default fallback browser
+            driver = new ChromeDriver();
+        }
 
-		WebElement username = driver.findElement(By.name("user_name"));
-		WebElement password = driver.findElement(By.name("user_password"));
-		WebElement loginBtn = driver.findElement(By.id("submitButton"));
+        // Setting browser window and implicit wait
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
-		username.sendKeys("admin");
-		password.sendKeys("password");
-		loginBtn.submit();
+        // -------------------------------------------
+        // Step 2: Login into Vtiger CRM
+        // -------------------------------------------
+        driver.get(URL);  // Opening CRM login page
 
-		// -------------------------------
-		// Step 3: Navigate to Contacts
-		// -------------------------------
-		driver.findElement(By.linkText("Contacts")).click();
-		driver.findElement(By.cssSelector("img[alt='Create Contact...']")).click();
+        WebElement username = driver.findElement(By.name("user_name"));
+        WebElement password = driver.findElement(By.name("user_password"));
+        WebElement loginBtn = driver.findElement(By.id("submitButton"));
 
-		// -------------------------------
-		// Step 4: Fill Contact Form
-		// -------------------------------
-		WebElement lastName_field = driver.findElement(By.name("lastname"));
-		String lastName = "gupta";	// Test data for Last Name field
-		lastName_field.sendKeys(lastName);
+        // Sending credentials
+        username.sendKeys(USERNAME);
+        password.sendKeys(PASSWORD);
+        loginBtn.submit();  // Logging in
 
-		// -------------------------------
-		// Step 5: Save Contact
-		// -------------------------------
-		driver.findElement(By.xpath("//input[@value='  Save  ']")).click();
+        // -------------------------------------------
+        // Step 3: Navigate to Contacts Module
+        // -------------------------------------------
+        driver.findElement(By.linkText("Contacts")).click();
 
-		// -------------------------------
-		// Step 6: Verification
-		// -------------------------------
-		String actLastName = driver.findElement(By.id("dtlview_Last Name")).getText();
+        // Clicking on Create Contact button
+        driver.findElement(By.cssSelector("img[alt='Create Contact...']")).click();
 
-		boolean lastNameStatus = actLastName.equals(lastName);
+        // -------------------------------------------
+        // Step 4: Fill Contact Form
+        // -------------------------------------------
+        WebElement lastName_field = driver.findElement(By.name("lastname"));
+        String lastName = "gupta";  // Test data for last name
 
-		if (lastNameStatus) {
-			System.out.println("Contact created successfully!!!");
-		} else {
-			System.out.println("Failed to create contact...");
-		}
+        // Entering last name
+        lastName_field.sendKeys(lastName);
 
-		// -------------------------------
-		// Step 7: Logout
-		// -------------------------------
-		Actions act = new Actions(driver);
-		WebElement profile = driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"));
-		act.moveToElement(profile).build().perform();
+        // -------------------------------------------
+        // Step 5: Save the Contact
+        // -------------------------------------------
+        driver.findElement(By.xpath("//input[@value='  Save  ']")).click();
 
-		driver.findElement(By.linkText("Sign Out")).click();
+        // -------------------------------------------
+        // Step 6: Verification of Contact Creation
+        // -------------------------------------------
+        String actLastName = driver.findElement(By.id("dtlview_Last Name")).getText();
 
-		// -------------------------------
-		// Step 8: Close Browser
-		// -------------------------------
-		Thread.sleep(3000);
-		driver.quit();
-	}
+        // Validating entered name with displayed name
+        boolean lastNameStatus = actLastName.equals(lastName);
+
+        if (lastNameStatus) {
+            System.out.println("Contact created successfully!!!");
+        } else {
+            System.out.println("Failed to create contact...");
+        }
+
+        // -------------------------------------------
+        // Step 7: Logout from CRM
+        // -------------------------------------------
+        Actions act = new Actions(driver);
+        WebElement profile = driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"));
+
+        // Hovering over profile icon
+        act.moveToElement(profile).build().perform();
+
+        // Clicking Sign Out
+        driver.findElement(By.linkText("Sign Out")).click();
+
+        // -------------------------------------------
+        // Step 8: Close Browser
+        // -------------------------------------------
+        Thread.sleep(3000); 
+        driver.quit(); 
+    }
 }
