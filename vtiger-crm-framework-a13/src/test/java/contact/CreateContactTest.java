@@ -21,6 +21,9 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,112 +32,116 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
+import generic_utility.FileUtility;
+import generic_utility.WebDriverUtility;
+
 public class CreateContactTest {
 
-    public static void main(String[] args) throws InterruptedException, IOException {
+	public static void main(String[] args) throws InterruptedException, IOException {
 
-        // Loading configuration file containing browser, URL, credentials
-        FileInputStream fis = new FileInputStream("./src/test/resources/commondata.properties");
-        Properties pObj = new Properties();
-        pObj.load(fis);
+		FileUtility fUtil = new FileUtility();
 
-        // Fetching data from properties file
-        String BROWSER = pObj.getProperty("browser");
-        String URL = pObj.getProperty("url");
-        String USERNAME = pObj.getProperty("un");
-        String PASSWORD = pObj.getProperty("pwd");
+		String BROWSER = fUtil.getDataFromPropertiesFile("browser");
+		String URL = fUtil.getDataFromPropertiesFile("url");
+		String USERNAME = fUtil.getDataFromPropertiesFile("un");
+		String PASSWORD = fUtil.getDataFromPropertiesFile("pwd");
 
-        // -------------------------------------------
-        // Step 1: Browser Initialization
-        // -------------------------------------------
-        String browser = BROWSER;  // Selected browser
-        WebDriver driver;
+		String lastName = fUtil.getDataFromExcelFile("contact", 5, 0);
+		
+		// -------------------------------------------
+		// Step 1: Browser Initialization
+		// -------------------------------------------
+		String browser = BROWSER; // Selected browser
+		WebDriver driver;
 
-        /*
-         * Launching browser based on value from properties file.
-         * Supported browsers: chrome, edge, firefox
-         */
-        if (browser.equals("chrome")) {
-            driver = new ChromeDriver();
-        } else if (browser.equals("edge")) {
-            driver = new EdgeDriver();
-        } else if (browser.equals("firefox")) {
-            driver = new FirefoxDriver();
-        } else {
-            // Default fallback browser
-            driver = new ChromeDriver();
-        }
+		/*
+		 * Launching browser based on value from properties file. Supported browsers:
+		 * chrome, edge, firefox
+		 */
+		if (browser.equals("chrome")) {
+			driver = new ChromeDriver();
+		} else if (browser.equals("edge")) {
+			driver = new EdgeDriver();
+		} else if (browser.equals("firefox")) {
+			driver = new FirefoxDriver();
+		} else {
+			// Default fallback browser
+			driver = new ChromeDriver();
+		}
 
-        // Setting browser window and implicit wait
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		// Setting browser window and implicit wait
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
-        // -------------------------------------------
-        // Step 2: Login into Vtiger CRM
-        // -------------------------------------------
-        driver.get(URL);  // Opening CRM login page
+		// -------------------------------------------
+		// Step 2: Login into Vtiger CRM
+		// -------------------------------------------
+		driver.get(URL); // Opening CRM login page
 
-        WebElement username = driver.findElement(By.name("user_name"));
-        WebElement password = driver.findElement(By.name("user_password"));
-        WebElement loginBtn = driver.findElement(By.id("submitButton"));
+		WebElement username = driver.findElement(By.name("user_name"));
+		WebElement password = driver.findElement(By.name("user_password"));
+		WebElement loginBtn = driver.findElement(By.id("submitButton"));
 
-        // Sending credentials
-        username.sendKeys(USERNAME);
-        password.sendKeys(PASSWORD);
-        loginBtn.submit();  // Logging in
+		// Sending credentials
+		username.sendKeys(USERNAME);
+		password.sendKeys(PASSWORD);
+		loginBtn.submit(); // Logging in
 
-        // -------------------------------------------
-        // Step 3: Navigate to Contacts Module
-        // -------------------------------------------
-        driver.findElement(By.linkText("Contacts")).click();
+		// -------------------------------------------
+		// Step 3: Navigate to Contacts Module
+		// -------------------------------------------
+		driver.findElement(By.linkText("Contacts")).click();
 
-        // Clicking on Create Contact button
-        driver.findElement(By.cssSelector("img[alt='Create Contact...']")).click();
+		// Clicking on Create Contact button
+		driver.findElement(By.cssSelector("img[alt='Create Contact...']")).click();
 
-        // -------------------------------------------
-        // Step 4: Fill Contact Form
-        // -------------------------------------------
-        WebElement lastName_field = driver.findElement(By.name("lastname"));
-        String lastName = "gupta";  // Test data for last name
+		// -------------------------------------------
+		// Step 4: Fill Contact Form
+		// -------------------------------------------
+		WebElement lastName_field = driver.findElement(By.name("lastname"));
+//        String lastName = "gupta";  // Test data for last name
 
-        // Entering last name
-        lastName_field.sendKeys(lastName);
+		// Entering last name
+		lastName_field.sendKeys(lastName);
 
-        // -------------------------------------------
-        // Step 5: Save the Contact
-        // -------------------------------------------
-        driver.findElement(By.xpath("//input[@value='  Save  ']")).click();
+		// -------------------------------------------
+		// Step 5: Save the Contact
+		// -------------------------------------------
+		driver.findElement(By.xpath("//input[@value='  Save  ']")).click();
 
-        // -------------------------------------------
-        // Step 6: Verification of Contact Creation
-        // -------------------------------------------
-        String actLastName = driver.findElement(By.id("dtlview_Last Name")).getText();
+		// -------------------------------------------
+		// Step 6: Verification of Contact Creation
+		// -------------------------------------------
+		String actLastName = driver.findElement(By.id("dtlview_Last Name")).getText();
 
-        // Validating entered name with displayed name
-        boolean lastNameStatus = actLastName.equals(lastName);
+		// Validating entered name with displayed name
+		boolean lastNameStatus = actLastName.equals(lastName);
 
-        if (lastNameStatus) {
-            System.out.println("Contact created successfully!!!");
-        } else {
-            System.out.println("Failed to create contact...");
-        }
+		if (lastNameStatus) {
+			System.out.println("Contact created successfully!!!");
+		} else {
+			System.out.println("Failed to create contact...");
+		}
 
-        // -------------------------------------------
-        // Step 7: Logout from CRM
-        // -------------------------------------------
-        Actions act = new Actions(driver);
-        WebElement profile = driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"));
+		// -------------------------------------------
+		// Step 7: Logout from CRM
+		// -------------------------------------------
+		WebDriverUtility wdUtil = new WebDriverUtility(driver);
+		WebElement profile = driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"));
 
-        // Hovering over profile icon
-        act.moveToElement(profile).build().perform();
+		// Hovering over profile icon
+//		Actions act = new Actions(driver);
+//		act.moveToElement(profile).build().perform();
 
-        // Clicking Sign Out
-        driver.findElement(By.linkText("Sign Out")).click();
+		wdUtil.hover(profile);
+		
+		// Clicking Sign Out
+		driver.findElement(By.linkText("Sign Out")).click();
 
-        // -------------------------------------------
-        // Step 8: Close Browser
-        // -------------------------------------------
-        Thread.sleep(3000); 
-        driver.quit(); 
-    }
+		// -------------------------------------------
+		// Step 8: Close Browser
+		// -------------------------------------------
+		Thread.sleep(3000);
+		driver.quit();
+	}
 }
