@@ -58,6 +58,7 @@ public class CreateContactTest {
 		 * Launching browser based on value from properties file. Supported browsers:
 		 * chrome, edge, firefox
 		 */
+		
 		if (browser.equals("chrome")) {
 			driver = new ChromeDriver();
 		} else if (browser.equals("edge")) {
@@ -68,11 +69,14 @@ public class CreateContactTest {
 			// Default fallback browser
 			driver = new ChromeDriver();
 		}
+		
+		WebDriverUtility wdUtil = new WebDriverUtility(driver);
 
 		// Setting browser window and implicit wait
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-
+//		driver.manage().window().maximize();
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		wdUtil.maximizeWindow();
+		wdUtil.waitForPageLoad();
 		// -------------------------------------------
 		// Step 2: Login into Vtiger CRM
 		// -------------------------------------------
@@ -126,7 +130,6 @@ public class CreateContactTest {
 		// -------------------------------------------
 		// Step 7: Logout from CRM
 		// -------------------------------------------
-		WebDriverUtility wdUtil = new WebDriverUtility(driver);
 		WebElement profile = driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"));
 
 		// Hovering over profile icon
