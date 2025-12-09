@@ -34,6 +34,8 @@ import org.openqa.selenium.interactions.Actions;
 
 import generic_utility.FileUtility;
 import generic_utility.WebDriverUtility;
+import object_repository.HomePage;
+import object_repository.LoginPage;
 
 public class CreateContactTest {
 
@@ -47,7 +49,7 @@ public class CreateContactTest {
 		String PASSWORD = fUtil.getDataFromPropertiesFile("pwd");
 
 		String lastName = fUtil.getDataFromExcelFile("contact", 5, 0);
-		
+
 		// -------------------------------------------
 		// Step 1: Browser Initialization
 		// -------------------------------------------
@@ -58,7 +60,7 @@ public class CreateContactTest {
 		 * Launching browser based on value from properties file. Supported browsers:
 		 * chrome, edge, firefox
 		 */
-		
+
 		if (browser.equals("chrome")) {
 			driver = new ChromeDriver();
 		} else if (browser.equals("edge")) {
@@ -69,7 +71,7 @@ public class CreateContactTest {
 			// Default fallback browser
 			driver = new ChromeDriver();
 		}
-		
+
 		WebDriverUtility wdUtil = new WebDriverUtility(driver);
 
 		// Setting browser window and implicit wait
@@ -82,9 +84,11 @@ public class CreateContactTest {
 		// -------------------------------------------
 		driver.get(URL); // Opening CRM login page
 
-		WebElement username = driver.findElement(By.name("user_name"));
-		WebElement password = driver.findElement(By.name("user_password"));
-		WebElement loginBtn = driver.findElement(By.id("submitButton"));
+		LoginPage lp = new LoginPage(driver);
+
+		WebElement username = lp.getUsername();
+		WebElement password = lp.getPassword();
+		WebElement loginBtn = lp.getLoginButton();
 
 		// Sending credentials
 		username.sendKeys(USERNAME);
@@ -94,9 +98,13 @@ public class CreateContactTest {
 		// -------------------------------------------
 		// Step 3: Navigate to Contacts Module
 		// -------------------------------------------
-		driver.findElement(By.linkText("Contacts")).click();
+//		driver.findElement(By.linkText("Contacts")).click();
+		HomePage hp = new HomePage(driver);
+		
+		hp.getContactLink().click();
+		
 
-		// Clicking on Create Contact button
+		// Clicking on plus icon
 		driver.findElement(By.cssSelector("img[alt='Create Contact...']")).click();
 
 		// -------------------------------------------
@@ -130,17 +138,17 @@ public class CreateContactTest {
 		// -------------------------------------------
 		// Step 7: Logout from CRM
 		// -------------------------------------------
-		WebElement profile = driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"));
 
 		// Hovering over profile icon
 //		Actions act = new Actions(driver);
 //		act.moveToElement(profile).build().perform();
-
-		wdUtil.hover(profile);
+		WebElement profile = hp.getProfileIcon();
 		
-		// Clicking Sign Out
-		driver.findElement(By.linkText("Sign Out")).click();
+		wdUtil.hover(profile);
 
+		// Clicking Sign Out
+		hp.getSignOutLink().click();
+		
 		// -------------------------------------------
 		// Step 8: Close Browser
 		// -------------------------------------------
