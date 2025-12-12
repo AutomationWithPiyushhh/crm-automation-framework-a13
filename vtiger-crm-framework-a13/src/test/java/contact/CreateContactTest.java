@@ -90,7 +90,7 @@ public class CreateContactTest {
 		WebElement password = lp.getPassword();
 		WebElement loginBtn = lp.getLoginButton();
 
-		// Sending credentials
+// Sending credentials
 		username.sendKeys(USERNAME);
 		password.sendKeys(PASSWORD);
 		loginBtn.submit(); // Logging in
@@ -100,9 +100,8 @@ public class CreateContactTest {
 		// -------------------------------------------
 //		driver.findElement(By.linkText("Contacts")).click();
 		HomePage hp = new HomePage(driver);
-		
+
 		hp.getContactLink().click();
-		
 
 		// Clicking on plus icon
 		driver.findElement(By.cssSelector("img[alt='Create Contact...']")).click();
@@ -143,12 +142,12 @@ public class CreateContactTest {
 //		Actions act = new Actions(driver);
 //		act.moveToElement(profile).build().perform();
 		WebElement profile = hp.getProfileIcon();
-		
+
 		wdUtil.hover(profile);
 
 		// Clicking Sign Out
 		hp.getSignOutLink().click();
-		
+
 		// -------------------------------------------
 		// Step 8: Close Browser
 		// -------------------------------------------
