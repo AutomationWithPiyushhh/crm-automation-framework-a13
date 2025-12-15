@@ -2,6 +2,7 @@ package object_repository;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -12,8 +13,24 @@ public class LoginPage {
 	}
 
 //	declaration
-	@FindBy(name = "user_name")
+//	@FindBy(name = "user_name")
+//	private WebElement username;
+
+//	and operator
+//	@FindBys({
+//		@FindBy(id = "user"),
+//		@FindBy(name = "user_name")
+//		})
+//	private WebElement username;
+
+//	or operator => AutoHealing
+	@FindAll({
+		@FindBy(id = "user"),
+		@FindBy(name = "user_name"),
+		@FindBy(css = "input[type='text']")
+		})
 	private WebElement username;
+	
 
 	@FindBy(name = "user_password")
 	private WebElement password;
@@ -33,8 +50,5 @@ public class LoginPage {
 
 	public WebElement getLoginButton() {
 		return loginBtn;
-	}
-	
-	
-
+	}	
 }

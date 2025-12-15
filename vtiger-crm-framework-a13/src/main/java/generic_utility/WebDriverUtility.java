@@ -82,19 +82,6 @@ public class WebDriverUtility {
 		driver.switchTo().defaultContent();
 	}
 
-	public WebDriver openBro(String browser) {
-		if (browser.equals("chrome")) {
-			driver = new ChromeDriver();
-		} else if (browser.equals("edge")) {
-			driver = new EdgeDriver();
-		} else if (browser.equals("firefox")) {
-			driver = new FirefoxDriver();
-		} else {
-			// Default fallback browser
-			driver = new ChromeDriver();
-		}
-		return driver;
-	}
 	
 	// ===== Basic Waits =====
 

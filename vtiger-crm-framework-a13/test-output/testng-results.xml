@@ -1,431 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="22" passed="22" failed="0" skipped="0">
+<testng-results ignored="1" total="9" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-12T13:51:12 IST" name="Default suite" finished-at="2025-12-12T13:52:04 IST" duration-ms="52642">
+  <suite started-at="2025-12-15T14:04:09 IST" name="Suite" finished-at="2025-12-15T14:04:21 IST" duration-ms="11780">
     <groups>
+      <group name="reg">
+        <method signature="Demo1.case12()[pri:0, instance:types_of_execution.Demo1@6a6cb05c]" name="case12" class="types_of_execution.Demo1"/>
+        <method signature="Demo1.case13()[pri:0, instance:types_of_execution.Demo1@6a6cb05c]" name="case13" class="types_of_execution.Demo1"/>
+        <method signature="Demo2.case21()[pri:0, instance:types_of_execution.Demo2@1165b38]" name="case21" class="types_of_execution.Demo2"/>
+        <method signature="Demo2.case22()[pri:0, instance:types_of_execution.Demo2@1165b38]" name="case22" class="types_of_execution.Demo2"/>
+        <method signature="Demo3.case31()[pri:0, instance:types_of_execution.Demo3@4c12331b]" name="case31" class="types_of_execution.Demo3"/>
+      </group> <!-- reg -->
+      <group name="smoke">
+        <method signature="Demo1.case11()[pri:0, instance:types_of_execution.Demo1@6a6cb05c]" name="case11" class="types_of_execution.Demo1"/>
+        <method signature="Demo3.case32()[pri:0, instance:types_of_execution.Demo3@4c12331b]" name="case32" class="types_of_execution.Demo3"/>
+        <method signature="Demo3.case33()[pri:0, instance:types_of_execution.Demo3@4c12331b]" name="case33" class="types_of_execution.Demo3"/>
+      </group> <!-- smoke -->
     </groups>
-    <test started-at="2025-12-12T13:51:12 IST" name="Default test" finished-at="2025-12-12T13:52:04 IST" duration-ms="52642">
-      <class name="testng_extra.DPpractice">
-        <test-method signature="fbLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_extra.DPpractice@4c12331b]" started-at="2025-12-12T13:51:12 IST" name="fbLogin" data-provider="getData" finished-at="2025-12-12T13:51:15 IST" duration-ms="3154" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[naveen_veeraReddy]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[MassEntry@Kantara]]>
-              </value>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-          </params>
+    <test started-at="2025-12-15T14:04:09 IST" name="Test" finished-at="2025-12-15T14:04:21 IST" duration-ms="11780">
+      <class name="types_of_execution.Demo1">
+        <test-method signature="case11()[pri:0, instance:types_of_execution.Demo1@6a6cb05c]" started-at="2025-12-15T14:04:09 IST" name="case11" finished-at="2025-12-15T14:04:11 IST" duration-ms="1876" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fbLogin -->
-        <test-method signature="fbLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_extra.DPpractice@4c12331b]" started-at="2025-12-12T13:51:15 IST" name="fbLogin" data-provider="getData" finished-at="2025-12-12T13:51:17 IST" duration-ms="2401" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[anurag_pushpaMode]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[FlowerAlaFire123]]>
-              </value>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-          </params>
+        </test-method> <!-- case11 -->
+        <test-method signature="case12()[pri:0, instance:types_of_execution.Demo1@6a6cb05c]" started-at="2025-12-15T14:04:11 IST" name="case12" finished-at="2025-12-15T14:04:13 IST" duration-ms="1399" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fbLogin -->
-        <test-method signature="fbLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_extra.DPpractice@4c12331b]" started-at="2025-12-12T13:51:17 IST" name="fbLogin" data-provider="getData" finished-at="2025-12-12T13:51:20 IST" duration-ms="2392" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[shikha_JaanuFan]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[96FramesOfLove]]>
-              </value>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-          </params>
+        </test-method> <!-- case12 -->
+        <test-method signature="case13()[pri:0, instance:types_of_execution.Demo1@6a6cb05c]" started-at="2025-12-15T14:04:13 IST" name="case13" finished-at="2025-12-15T14:04:14 IST" duration-ms="1346" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fbLogin -->
-        <test-method signature="fbLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_extra.DPpractice@4c12331b]" started-at="2025-12-12T13:51:20 IST" name="fbLogin" data-provider="getData" finished-at="2025-12-12T13:51:22 IST" duration-ms="2424" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[sumant_bahubaliReturns]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[KatappaWhyMe7]]>
-              </value>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-          </params>
+        </test-method> <!-- case13 -->
+      </class> <!-- types_of_execution.Demo1 -->
+      <class name="types_of_execution.Demo2">
+        <test-method signature="case21()[pri:0, instance:types_of_execution.Demo2@1165b38]" started-at="2025-12-15T14:04:14 IST" name="case21" finished-at="2025-12-15T14:04:15 IST" duration-ms="1301" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fbLogin -->
-        <test-method signature="fbLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_extra.DPpractice@4c12331b]" started-at="2025-12-12T13:51:22 IST" name="fbLogin" data-provider="getData" finished-at="2025-12-12T13:51:24 IST" duration-ms="2336" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[jitesh_VikramVeda]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[RolexNotCheap]]>
-              </value>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-          </params>
+        </test-method> <!-- case21 -->
+        <test-method signature="case22()[pri:0, instance:types_of_execution.Demo2@1165b38]" started-at="2025-12-15T14:04:15 IST" name="case22" finished-at="2025-12-15T14:04:17 IST" duration-ms="1379" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fbLogin -->
-        <test-method signature="fbLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_extra.DPpractice@4c12331b]" started-at="2025-12-12T13:51:24 IST" name="fbLogin" data-provider="getData" finished-at="2025-12-12T13:51:27 IST" duration-ms="2340" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[kritika_PonniyinSelvi]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[CholaQueen2025]]>
-              </value>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-          </params>
+        </test-method> <!-- case22 -->
+      </class> <!-- types_of_execution.Demo2 -->
+      <class name="types_of_execution.Demo3">
+        <test-method signature="case31()[pri:0, instance:types_of_execution.Demo3@4c12331b]" started-at="2025-12-15T14:04:17 IST" name="case31" finished-at="2025-12-15T14:04:18 IST" duration-ms="1492" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fbLogin -->
-        <test-method signature="fbLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_extra.DPpractice@4c12331b]" started-at="2025-12-12T13:51:27 IST" name="fbLogin" data-provider="getData" finished-at="2025-12-12T13:51:29 IST" duration-ms="2349" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chirag_AnjaanAgent]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[SuryaSwag_01]]>
-              </value>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-          </params>
+        </test-method> <!-- case31 -->
+        <test-method signature="case32()[pri:0, instance:types_of_execution.Demo3@4c12331b]" started-at="2025-12-15T14:04:18 IST" name="case32" finished-at="2025-12-15T14:04:20 IST" duration-ms="1445" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fbLogin -->
-        <test-method signature="fbLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_extra.DPpractice@4c12331b]" started-at="2025-12-12T13:51:29 IST" name="fbLogin" data-provider="getData" finished-at="2025-12-12T13:51:31 IST" duration-ms="2291" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[pravakar_RRRized]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[NatuNatu@Beam]]>
-              </value>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-          </params>
+        </test-method> <!-- case32 -->
+        <test-method signature="case33()[pri:0, instance:types_of_execution.Demo3@4c12331b]" started-at="2025-12-15T14:04:20 IST" name="case33" finished-at="2025-12-15T14:04:21 IST" duration-ms="1479" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fbLogin -->
-        <test-method signature="fbLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_extra.DPpractice@4c12331b]" started-at="2025-12-12T13:51:31 IST" name="fbLogin" data-provider="getData" finished-at="2025-12-12T13:51:34 IST" duration-ms="2315" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ravindra_JailerStyle]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[TigerKaAppa]]>
-              </value>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fbLogin -->
-        <test-method signature="fbLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_extra.DPpractice@4c12331b]" started-at="2025-12-12T13:51:34 IST" name="fbLogin" data-provider="getData" finished-at="2025-12-12T13:51:36 IST" duration-ms="2312" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[amit_KGFfied]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[RockyBhaiOp]]>
-              </value>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fbLogin -->
-        <test-method signature="fbLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_extra.DPpractice@4c12331b]" started-at="2025-12-12T13:51:36 IST" name="fbLogin" data-provider="getData" finished-at="2025-12-12T13:51:38 IST" duration-ms="2318" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ayush_ThalapathyMode]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[BeastEntry2025]]>
-              </value>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fbLogin -->
-        <test-method signature="fbLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_extra.DPpractice@4c12331b]" started-at="2025-12-12T13:51:38 IST" name="fbLogin" data-provider="getData" finished-at="2025-12-12T13:51:41 IST" duration-ms="2311" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[khushi_SitaRamam]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[RamForSita@11]]>
-              </value>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fbLogin -->
-        <test-method signature="fbLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_extra.DPpractice@4c12331b]" started-at="2025-12-12T13:51:41 IST" name="fbLogin" data-provider="getData" finished-at="2025-12-12T13:51:43 IST" duration-ms="2252" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[jitendra_KabaliDa]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[NeruppuDa_77]]>
-              </value>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fbLogin -->
-        <test-method signature="fbLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_extra.DPpractice@4c12331b]" started-at="2025-12-12T13:51:43 IST" name="fbLogin" data-provider="getData" finished-at="2025-12-12T13:51:46 IST" duration-ms="2594" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[kamani_ArjunReddyVibe]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[RowdyClass_09]]>
-              </value>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fbLogin -->
-        <test-method signature="fbLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_extra.DPpractice@4c12331b]" started-at="2025-12-12T13:51:46 IST" name="fbLogin" data-provider="getData" finished-at="2025-12-12T13:51:48 IST" duration-ms="2371" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[nishant_SinghamReturns]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[MassOfficer@DSP]]>
-              </value>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fbLogin -->
-        <test-method signature="fbLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_extra.DPpractice@4c12331b]" started-at="2025-12-12T13:51:48 IST" name="fbLogin" data-provider="getData" finished-at="2025-12-12T13:51:50 IST" duration-ms="2416" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[jisha_PushpaSrivalli]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[SrivalliStep_96]]>
-              </value>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fbLogin -->
-        <test-method signature="fbLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_extra.DPpractice@4c12331b]" started-at="2025-12-12T13:51:50 IST" name="fbLogin" data-provider="getData" finished-at="2025-12-12T13:51:53 IST" duration-ms="2247" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[bindu_BabyFan]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[SaiPallaviGrace]]>
-              </value>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fbLogin -->
-        <test-method signature="fbLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_extra.DPpractice@4c12331b]" started-at="2025-12-12T13:51:53 IST" name="fbLogin" data-provider="getData" finished-at="2025-12-12T13:51:55 IST" duration-ms="2321" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[nidhi_KarthikDial]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[PremamLove2025]]>
-              </value>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fbLogin -->
-        <test-method signature="fbLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_extra.DPpractice@4c12331b]" started-at="2025-12-12T13:51:55 IST" name="fbLogin" data-provider="getData" finished-at="2025-12-12T13:51:57 IST" duration-ms="2293" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[somi_DarlingPrabhas]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[MirchiHeat@88]]>
-              </value>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fbLogin -->
-        <test-method signature="fbLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_extra.DPpractice@4c12331b]" started-at="2025-12-12T13:51:57 IST" name="fbLogin" data-provider="getData" finished-at="2025-12-12T13:52:00 IST" duration-ms="2383" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[nikhil_Robo2Point0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[ChittiReloaded]]>
-              </value>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fbLogin -->
-        <test-method signature="fbLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_extra.DPpractice@4c12331b]" started-at="2025-12-12T13:52:00 IST" name="fbLogin" data-provider="getData" finished-at="2025-12-12T13:52:02 IST" duration-ms="2401" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[vaishnavi_BomberRashmika]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[NationalCrush#1]]>
-              </value>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fbLogin -->
-        <test-method signature="fbLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_extra.DPpractice@4c12331b]" started-at="2025-12-12T13:52:02 IST" name="fbLogin" data-provider="getData" finished-at="2025-12-12T13:52:04 IST" duration-ms="2305" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[devesh_OGPushparaj]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[FireLagaDenge@001]]>
-              </value>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fbLogin -->
-      </class> <!-- testng_extra.DPpractice -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- case33 -->
+      </class> <!-- types_of_execution.Demo3 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
