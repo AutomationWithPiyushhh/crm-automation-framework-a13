@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testng_extra.Dependency">
+      <class name="types_of_execution.CrossBrowser">
         <methods>
-          <include name="deleteCity"/>
-          <include name="createCity"/>
-          <include name="modifyCity"/>
+          <include name="commonData"/>
         </methods>
-      </class> <!-- testng_extra.Dependency -->
+      </class> <!-- types_of_execution.CrossBrowser -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

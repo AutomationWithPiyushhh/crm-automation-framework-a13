@@ -1,61 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="9" passed="8" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-15T14:04:09 IST" name="Suite" finished-at="2025-12-15T14:04:21 IST" duration-ms="11780">
+  <suite started-at="2025-12-16T13:41:29 IST" name="Suite" finished-at="2025-12-16T13:41:37 IST" duration-ms="8327">
     <groups>
-      <group name="reg">
-        <method signature="Demo1.case12()[pri:0, instance:types_of_execution.Demo1@6a6cb05c]" name="case12" class="types_of_execution.Demo1"/>
-        <method signature="Demo1.case13()[pri:0, instance:types_of_execution.Demo1@6a6cb05c]" name="case13" class="types_of_execution.Demo1"/>
-        <method signature="Demo2.case21()[pri:0, instance:types_of_execution.Demo2@1165b38]" name="case21" class="types_of_execution.Demo2"/>
-        <method signature="Demo2.case22()[pri:0, instance:types_of_execution.Demo2@1165b38]" name="case22" class="types_of_execution.Demo2"/>
-        <method signature="Demo3.case31()[pri:0, instance:types_of_execution.Demo3@4c12331b]" name="case31" class="types_of_execution.Demo3"/>
-      </group> <!-- reg -->
-      <group name="smoke">
-        <method signature="Demo1.case11()[pri:0, instance:types_of_execution.Demo1@6a6cb05c]" name="case11" class="types_of_execution.Demo1"/>
-        <method signature="Demo3.case32()[pri:0, instance:types_of_execution.Demo3@4c12331b]" name="case32" class="types_of_execution.Demo3"/>
-        <method signature="Demo3.case33()[pri:0, instance:types_of_execution.Demo3@4c12331b]" name="case33" class="types_of_execution.Demo3"/>
-      </group> <!-- smoke -->
     </groups>
-    <test started-at="2025-12-15T14:04:09 IST" name="Test" finished-at="2025-12-15T14:04:21 IST" duration-ms="11780">
-      <class name="types_of_execution.Demo1">
-        <test-method signature="case11()[pri:0, instance:types_of_execution.Demo1@6a6cb05c]" started-at="2025-12-15T14:04:09 IST" name="case11" finished-at="2025-12-15T14:04:11 IST" duration-ms="1876" status="PASS">
+    <test started-at="2025-12-16T13:41:29 IST" name="Test1" finished-at="2025-12-16T13:41:34 IST" duration-ms="5186">
+      <class name="types_of_execution.CrossBrowser">
+        <test-method signature="commonData(java.lang.String)[pri:0, instance:types_of_execution.CrossBrowser@c730b35]" started-at="2025-12-16T13:41:29 IST" name="commonData" finished-at="2025-12-16T13:41:34 IST" duration-ms="5114" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- case11 -->
-        <test-method signature="case12()[pri:0, instance:types_of_execution.Demo1@6a6cb05c]" started-at="2025-12-15T14:04:11 IST" name="case12" finished-at="2025-12-15T14:04:13 IST" duration-ms="1399" status="PASS">
+        </test-method> <!-- commonData -->
+      </class> <!-- types_of_execution.CrossBrowser -->
+    </test> <!-- Test1 -->
+    <test started-at="2025-12-16T13:41:29 IST" name="Test2" finished-at="2025-12-16T13:41:34 IST" duration-ms="5293">
+      <class name="types_of_execution.CrossBrowser">
+        <test-method signature="commonData(java.lang.String)[pri:0, instance:types_of_execution.CrossBrowser@41a2befb]" started-at="2025-12-16T13:41:29 IST" name="commonData" finished-at="2025-12-16T13:41:34 IST" duration-ms="5245" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- case12 -->
-        <test-method signature="case13()[pri:0, instance:types_of_execution.Demo1@6a6cb05c]" started-at="2025-12-15T14:04:13 IST" name="case13" finished-at="2025-12-15T14:04:14 IST" duration-ms="1346" status="PASS">
+        </test-method> <!-- commonData -->
+      </class> <!-- types_of_execution.CrossBrowser -->
+    </test> <!-- Test2 -->
+    <test started-at="2025-12-16T13:41:29 IST" name="Test3" finished-at="2025-12-16T13:41:37 IST" duration-ms="8327">
+      <class name="types_of_execution.CrossBrowser">
+        <test-method signature="commonData(java.lang.String)[pri:0, instance:types_of_execution.CrossBrowser@7bedc48a]" started-at="2025-12-16T13:41:29 IST" name="commonData" finished-at="2025-12-16T13:41:37 IST" duration-ms="8281" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- case13 -->
-      </class> <!-- types_of_execution.Demo1 -->
-      <class name="types_of_execution.Demo2">
-        <test-method signature="case21()[pri:0, instance:types_of_execution.Demo2@1165b38]" started-at="2025-12-15T14:04:14 IST" name="case21" finished-at="2025-12-15T14:04:15 IST" duration-ms="1301" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- case21 -->
-        <test-method signature="case22()[pri:0, instance:types_of_execution.Demo2@1165b38]" started-at="2025-12-15T14:04:15 IST" name="case22" finished-at="2025-12-15T14:04:17 IST" duration-ms="1379" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- case22 -->
-      </class> <!-- types_of_execution.Demo2 -->
-      <class name="types_of_execution.Demo3">
-        <test-method signature="case31()[pri:0, instance:types_of_execution.Demo3@4c12331b]" started-at="2025-12-15T14:04:17 IST" name="case31" finished-at="2025-12-15T14:04:18 IST" duration-ms="1492" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- case31 -->
-        <test-method signature="case32()[pri:0, instance:types_of_execution.Demo3@4c12331b]" started-at="2025-12-15T14:04:18 IST" name="case32" finished-at="2025-12-15T14:04:20 IST" duration-ms="1445" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- case32 -->
-        <test-method signature="case33()[pri:0, instance:types_of_execution.Demo3@4c12331b]" started-at="2025-12-15T14:04:20 IST" name="case33" finished-at="2025-12-15T14:04:21 IST" duration-ms="1479" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- case33 -->
-      </class> <!-- types_of_execution.Demo3 -->
-    </test> <!-- Test -->
+        </test-method> <!-- commonData -->
+      </class> <!-- types_of_execution.CrossBrowser -->
+    </test> <!-- Test3 -->
   </suite> <!-- Suite -->
 </testng-results>

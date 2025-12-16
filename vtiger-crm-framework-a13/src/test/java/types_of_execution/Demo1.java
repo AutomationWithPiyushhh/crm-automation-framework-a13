@@ -10,6 +10,7 @@ public class Demo1 {
 		WebDriver driver = new ChromeDriver();
 		Thread.sleep(500);
 		driver.quit();
+		System.out.println("11");
 	}
 	
 	@Test(groups = "reg")
@@ -17,6 +18,7 @@ public class Demo1 {
 		WebDriver driver = new ChromeDriver();
 		Thread.sleep(500);
 		driver.quit();
+		System.out.println("12");
 	}	
 
 	@Test(groups = "reg")
@@ -24,6 +26,7 @@ public class Demo1 {
 		WebDriver driver = new ChromeDriver();
 		Thread.sleep(500);
 		driver.quit();
+		System.out.println("13");
 	}
 }
 
