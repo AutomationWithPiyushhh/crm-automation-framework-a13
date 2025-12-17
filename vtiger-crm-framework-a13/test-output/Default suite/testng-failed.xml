@@ -3,11 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="types_of_execution.CrossBrowser">
+      <class name="configurationAnn.SauceDemo">
         <methods>
-          <include name="commonData"/>
+          <include name="login"/>
+          <include name="logOut"/>
+          <include name="removetFromCart"/>
+          <include name="closeBro"/>
+          <include name="openBro"/>
         </methods>
-      </class> <!-- types_of_execution.CrossBrowser -->
+      </class> <!-- configurationAnn.SauceDemo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
