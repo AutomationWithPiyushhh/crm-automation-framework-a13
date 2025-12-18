@@ -1,91 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-18T13:28:49 IST" name="Default suite" finished-at="2025-12-18T13:28:56 IST" duration-ms="7339">
+  <suite started-at="2025-12-18T16:47:32 IST" name="Default suite" finished-at="2025-12-18T16:47:40 IST" duration-ms="8653">
     <groups>
     </groups>
-    <test started-at="2025-12-18T13:28:49 IST" name="Default test" finished-at="2025-12-18T13:28:56 IST" duration-ms="7339">
-      <class name="contact.ContactTest">
-        <test-method signature="createContactTest()[pri:0, instance:contact.ContactTest@1d296da]" started-at="2025-12-18T13:28:49 IST" name="createContactTest" finished-at="2025-12-18T13:28:56 IST" duration-ms="7262" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
-            <message>
-              <![CDATA[invalid session id: session deleted as the browser has closed the connection
-from disconnected: unable to send message to renderer
-  (Session info: MicrosoftEdge=143.0.3650.80)
-Build info: version: '4.34.0', revision: '707dcb4246*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [01ed50343e272a52904464d578b92abd, findElements {using=id, value=user}]
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 143.0.3650.80, fedcm:accounts: true, goog:processID: 19412, ms:edgeOptions: {debuggerAddress: localhost:50752}, msedge: {msedgedriverVersion: 143.0.3650.80 (788579717f68..., userDataDir: C:\Users\User\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50752/devtoo..., se:cdpVersion: 143.0.3650.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 01ed50343e272a52904464d578b92abd]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
-from disconnected: unable to send message to renderer
-  (Session info: MicrosoftEdge=143.0.3650.80)
-Build info: version: '4.34.0', revision: '707dcb4246*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [01ed50343e272a52904464d578b92abd, findElements {using=id, value=user}]
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 143.0.3650.80, fedcm:accounts: true, goog:processID: 19412, ms:edgeOptions: {debuggerAddress: localhost:50752}, msedge: {msedgedriverVersion: 143.0.3650.80 (788579717f68..., userDataDir: C:\Users\User\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50752/devtoo..., se:cdpVersion: 143.0.3650.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 01ed50343e272a52904464d578b92abd
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElements(ElementLocation.java:182)
-at org.openqa.selenium.remote.ElementLocation.findElements(ElementLocation.java:110)
-at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:380)
-at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:374)
-at org.openqa.selenium.support.pagefactory.ByAll.findElement(ByAll.java:52)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:81)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy11.sendKeys(Unknown Source)
-at contact.ContactTest.createContactTest(ContactTest.java:93)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+    <test started-at="2025-12-18T16:47:32 IST" name="Default test" finished-at="2025-12-18T16:47:40 IST" duration-ms="8653">
+      <class name="advance_reports.FaceBook">
+        <test-method is-config="true" signature="repConfig()[pri:0, instance:advance_reports.FaceBook@fbd1f6]" started-at="2025-12-18T16:47:31 IST" name="repConfig" finished-at="2025-12-18T16:47:32 IST" duration-ms="206" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createContactTest -->
-      </class> <!-- contact.ContactTest -->
+        </test-method> <!-- repConfig -->
+        <test-method signature="fblogin()[pri:0, instance:advance_reports.FaceBook@fbd1f6]" started-at="2025-12-18T16:47:32 IST" name="fblogin" finished-at="2025-12-18T16:47:36 IST" duration-ms="4625" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fblogin -->
+        <test-method signature="instalogin()[pri:0, instance:advance_reports.FaceBook@fbd1f6]" started-at="2025-12-18T16:47:36 IST" name="instalogin" finished-at="2025-12-18T16:47:40 IST" duration-ms="3993" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- instalogin -->
+        <test-method is-config="true" signature="repBackup()[pri:0, instance:advance_reports.FaceBook@fbd1f6]" started-at="2025-12-18T16:47:40 IST" name="repBackup" finished-at="2025-12-18T16:47:41 IST" duration-ms="253" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- repBackup -->
+      </class> <!-- advance_reports.FaceBook -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
