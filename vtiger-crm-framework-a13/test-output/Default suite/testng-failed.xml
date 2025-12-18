@@ -3,15 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="configurationAnn.SauceDemo">
+      <class name="contact.ContactTest">
         <methods>
-          <include name="login"/>
-          <include name="logOut"/>
-          <include name="removetFromCart"/>
-          <include name="closeBro"/>
-          <include name="openBro"/>
+          <include name="createContactTest"/>
         </methods>
-      </class> <!-- configurationAnn.SauceDemo -->
+      </class> <!-- contact.ContactTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
