@@ -1,29 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="1" failed="1" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-18T16:47:32 IST" name="Default suite" finished-at="2025-12-18T16:47:40 IST" duration-ms="8653">
+  <suite started-at="2025-12-19T13:57:50 IST" name="Default suite" finished-at="2025-12-19T13:57:57 IST" duration-ms="6731">
     <groups>
     </groups>
-    <test started-at="2025-12-18T16:47:32 IST" name="Default test" finished-at="2025-12-18T16:47:40 IST" duration-ms="8653">
-      <class name="advance_reports.FaceBook">
-        <test-method is-config="true" signature="repConfig()[pri:0, instance:advance_reports.FaceBook@fbd1f6]" started-at="2025-12-18T16:47:31 IST" name="repConfig" finished-at="2025-12-18T16:47:32 IST" duration-ms="206" status="PASS">
+    <test started-at="2025-12-19T13:57:50 IST" name="Default test" finished-at="2025-12-19T13:57:57 IST" duration-ms="6731">
+      <class name="listeners_extra.JustToProveListener">
+        <test-method is-config="true" signature="openBro()[pri:0, instance:listeners_extra.JustToProveListener@7a8c8dcf]" started-at="2025-12-19T13:57:50 IST" name="openBro" finished-at="2025-12-19T13:57:52 IST" duration-ms="1823" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- repConfig -->
-        <test-method signature="fblogin()[pri:0, instance:advance_reports.FaceBook@fbd1f6]" started-at="2025-12-18T16:47:32 IST" name="fblogin" finished-at="2025-12-18T16:47:36 IST" duration-ms="4625" status="PASS">
+        </test-method> <!-- openBro -->
+        <test-method signature="facebook()[pri:0, instance:listeners_extra.JustToProveListener@7a8c8dcf]" started-at="2025-12-19T13:57:52 IST" name="facebook" finished-at="2025-12-19T13:57:55 IST" duration-ms="2920" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fblogin -->
-        <test-method signature="instalogin()[pri:0, instance:advance_reports.FaceBook@fbd1f6]" started-at="2025-12-18T16:47:36 IST" name="instalogin" finished-at="2025-12-18T16:47:40 IST" duration-ms="3993" status="PASS">
+        </test-method> <!-- facebook -->
+        <test-method signature="zomato()[pri:0, instance:listeners_extra.JustToProveListener@7a8c8dcf]" started-at="2025-12-19T13:57:55 IST" name="zomato" finished-at="2025-12-19T13:57:55 IST" duration-ms="774" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at listeners_extra.JustToProveListener.zomato(List_Imp.java:110)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- instalogin -->
-        <test-method is-config="true" signature="repBackup()[pri:0, instance:advance_reports.FaceBook@fbd1f6]" started-at="2025-12-18T16:47:40 IST" name="repBackup" finished-at="2025-12-18T16:47:41 IST" duration-ms="253" status="PASS">
+        </test-method> <!-- zomato -->
+        <test-method signature="insta()[pri:0, instance:listeners_extra.JustToProveListener@7a8c8dcf]" started-at="2025-12-19T13:57:56 IST" name="insta" finished-at="2025-12-19T13:57:56 IST" depends-on-methods="listeners_extra.JustToProveListener.zomato" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method listeners_extra.JustToProveListener.insta() on instance listeners_extra.JustToProveListener@7a8c8dcf depends on not successfully finished methods 
+[listeners_extra.JustToProveListener.zomato() on instance listeners_extra.JustToProveListener@7a8c8dcf]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method listeners_extra.JustToProveListener.insta() on instance listeners_extra.JustToProveListener@7a8c8dcf depends on not successfully finished methods 
+[listeners_extra.JustToProveListener.zomato() on instance listeners_extra.JustToProveListener@7a8c8dcf]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- repBackup -->
-      </class> <!-- advance_reports.FaceBook -->
+        </test-method> <!-- insta -->
+        <test-method is-config="true" signature="closeBro()[pri:0, instance:listeners_extra.JustToProveListener@7a8c8dcf]" started-at="2025-12-19T13:57:56 IST" name="closeBro" finished-at="2025-12-19T13:57:57 IST" duration-ms="341" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBro -->
+      </class> <!-- listeners_extra.JustToProveListener -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -3,11 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="contact.ContactTest">
+      <class name="listeners_extra.JustToProveListener">
         <methods>
-          <include name="createContactTest"/>
+          <include name="zomato"/>
+          <include name="insta"/>
+          <include name="openBro"/>
+          <include name="closeBro"/>
         </methods>
-      </class> <!-- contact.ContactTest -->
+      </class> <!-- listeners_extra.JustToProveListener -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
