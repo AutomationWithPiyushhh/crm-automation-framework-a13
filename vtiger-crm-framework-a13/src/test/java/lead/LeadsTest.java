@@ -14,26 +14,25 @@
  * 7. Logout and close browser
  */
 
-package contact;
+package lead;
 
 import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import base_utility.BaseClass;
 import generic_utility.FileUtility;
 import object_repository.HomePage;
 
-public class ContactTest extends BaseClass {
+public class LeadsTest extends BaseClass {
 
 //	public static void main(String[] args) throws InterruptedException, IOException {
 
 	@Test
-	public void createContactTest() throws IOException, InterruptedException {
+	public void createLeadsTest() throws IOException, InterruptedException {
 
 		String lastName = new FileUtility().getDataFromExcelFile("contact", 5, 0);
 		

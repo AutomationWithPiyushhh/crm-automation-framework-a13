@@ -1,103 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="1" failed="1" skipped="1">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-19T13:57:50 IST" name="Default suite" finished-at="2025-12-19T13:57:57 IST" duration-ms="6731">
+  <suite started-at="2025-12-22T14:15:14 IST" name="Suite" finished-at="2025-12-22T14:16:14 IST" duration-ms="60825">
     <groups>
     </groups>
-    <test started-at="2025-12-19T13:57:50 IST" name="Default test" finished-at="2025-12-19T13:57:57 IST" duration-ms="6731">
-      <class name="listeners_extra.JustToProveListener">
-        <test-method is-config="true" signature="openBro()[pri:0, instance:listeners_extra.JustToProveListener@7a8c8dcf]" started-at="2025-12-19T13:57:50 IST" name="openBro" finished-at="2025-12-19T13:57:52 IST" duration-ms="1823" status="PASS">
+    <test started-at="2025-12-22T14:15:14 IST" name="Test1" finished-at="2025-12-22T14:16:14 IST" duration-ms="60247">
+      <class name="org.OrgTest">
+        <test-method is-config="true" signature="openBro()[pri:0, instance:org.OrgTest@2aceadd4]" started-at="2025-12-22T14:15:14 IST" name="openBro" finished-at="2025-12-22T14:15:17 IST" duration-ms="3077" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBro -->
-        <test-method signature="facebook()[pri:0, instance:listeners_extra.JustToProveListener@7a8c8dcf]" started-at="2025-12-19T13:57:52 IST" name="facebook" finished-at="2025-12-19T13:57:55 IST" duration-ms="2920" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:org.OrgTest@2aceadd4]" started-at="2025-12-22T14:15:17 IST" name="login" finished-at="2025-12-22T14:15:42 IST" duration-ms="25256" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- facebook -->
-        <test-method signature="zomato()[pri:0, instance:listeners_extra.JustToProveListener@7a8c8dcf]" started-at="2025-12-19T13:57:55 IST" name="zomato" finished-at="2025-12-19T13:57:55 IST" duration-ms="774" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1590)
-at org.testng.Assert.assertTrue(Assert.java:57)
-at org.testng.Assert.assertTrue(Assert.java:67)
-at listeners_extra.JustToProveListener.zomato(List_Imp.java:110)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        </test-method> <!-- login -->
+        <test-method signature="createOrgTest()[pri:0, instance:org.OrgTest@2aceadd4]" started-at="2025-12-22T14:15:42 IST" name="createOrgTest" finished-at="2025-12-22T14:16:05 IST" duration-ms="23287" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- zomato -->
-        <test-method signature="insta()[pri:0, instance:listeners_extra.JustToProveListener@7a8c8dcf]" started-at="2025-12-19T13:57:56 IST" name="insta" finished-at="2025-12-19T13:57:56 IST" depends-on-methods="listeners_extra.JustToProveListener.zomato" duration-ms="0" status="SKIP">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method listeners_extra.JustToProveListener.insta() on instance listeners_extra.JustToProveListener@7a8c8dcf depends on not successfully finished methods 
-[listeners_extra.JustToProveListener.zomato() on instance listeners_extra.JustToProveListener@7a8c8dcf]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method listeners_extra.JustToProveListener.insta() on instance listeners_extra.JustToProveListener@7a8c8dcf depends on not successfully finished methods 
-[listeners_extra.JustToProveListener.zomato() on instance listeners_extra.JustToProveListener@7a8c8dcf]
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
+        </test-method> <!-- createOrgTest -->
+        <test-method is-config="true" signature="logOut()[pri:0, instance:org.OrgTest@2aceadd4]" started-at="2025-12-22T14:16:05 IST" name="logOut" finished-at="2025-12-22T14:16:13 IST" duration-ms="8164" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- insta -->
-        <test-method is-config="true" signature="closeBro()[pri:0, instance:listeners_extra.JustToProveListener@7a8c8dcf]" started-at="2025-12-19T13:57:56 IST" name="closeBro" finished-at="2025-12-19T13:57:57 IST" duration-ms="341" status="PASS">
+        </test-method> <!-- logOut -->
+        <test-method is-config="true" signature="closeBro()[pri:0, instance:org.OrgTest@2aceadd4]" started-at="2025-12-22T14:16:13 IST" name="closeBro" finished-at="2025-12-22T14:16:14 IST" duration-ms="393" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBro -->
-      </class> <!-- listeners_extra.JustToProveListener -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- org.OrgTest -->
+    </test> <!-- Test1 -->
+    <test started-at="2025-12-22T14:15:14 IST" name="Test3" finished-at="2025-12-22T14:16:14 IST" duration-ms="60758">
+      <class name="contact.ContactTest">
+        <test-method is-config="true" signature="openBro()[pri:0, instance:contact.ContactTest@6a2f6f80]" started-at="2025-12-22T14:15:14 IST" name="openBro" finished-at="2025-12-22T14:15:16 IST" duration-ms="2836" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBro -->
+        <test-method is-config="true" signature="login()[pri:0, instance:contact.ContactTest@6a2f6f80]" started-at="2025-12-22T14:15:17 IST" name="login" finished-at="2025-12-22T14:15:42 IST" duration-ms="25298" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="createContactTest()[pri:0, instance:contact.ContactTest@6a2f6f80]" started-at="2025-12-22T14:15:42 IST" name="createContactTest" finished-at="2025-12-22T14:16:06 IST" duration-ms="23834" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createContactTest -->
+        <test-method is-config="true" signature="logOut()[pri:0, instance:contact.ContactTest@6a2f6f80]" started-at="2025-12-22T14:16:06 IST" name="logOut" finished-at="2025-12-22T14:16:14 IST" duration-ms="8311" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logOut -->
+        <test-method is-config="true" signature="closeBro()[pri:0, instance:contact.ContactTest@6a2f6f80]" started-at="2025-12-22T14:16:14 IST" name="closeBro" finished-at="2025-12-22T14:16:14 IST" duration-ms="390" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBro -->
+      </class> <!-- contact.ContactTest -->
+    </test> <!-- Test3 -->
+    <test started-at="2025-12-22T14:15:14 IST" name="Test2" finished-at="2025-12-22T14:16:14 IST" duration-ms="60825">
+      <class name="lead.LeadsTest">
+        <test-method is-config="true" signature="openBro()[pri:0, instance:lead.LeadsTest@33c911a1]" started-at="2025-12-22T14:15:14 IST" name="openBro" finished-at="2025-12-22T14:15:17 IST" duration-ms="3425" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBro -->
+        <test-method is-config="true" signature="login()[pri:0, instance:lead.LeadsTest@33c911a1]" started-at="2025-12-22T14:15:17 IST" name="login" finished-at="2025-12-22T14:15:42 IST" duration-ms="24876" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="createLeadsTest()[pri:0, instance:lead.LeadsTest@33c911a1]" started-at="2025-12-22T14:15:42 IST" name="createLeadsTest" finished-at="2025-12-22T14:16:06 IST" duration-ms="23847" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createLeadsTest -->
+        <test-method is-config="true" signature="logOut()[pri:0, instance:lead.LeadsTest@33c911a1]" started-at="2025-12-22T14:16:06 IST" name="logOut" finished-at="2025-12-22T14:16:14 IST" duration-ms="8299" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logOut -->
+        <test-method is-config="true" signature="closeBro()[pri:0, instance:lead.LeadsTest@33c911a1]" started-at="2025-12-22T14:16:14 IST" name="closeBro" finished-at="2025-12-22T14:16:14 IST" duration-ms="306" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBro -->
+      </class> <!-- lead.LeadsTest -->
+    </test> <!-- Test2 -->
+  </suite> <!-- Suite -->
 </testng-results>

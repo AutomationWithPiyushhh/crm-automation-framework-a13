@@ -1,9 +1,9 @@
 package base_utility;
 
-import java.time.Duration;
+import java.io.IOException;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -12,52 +12,66 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
+import generic_utility.FileUtility;
+import generic_utility.WebDriverUtility;
+import object_repository.HomePage;
+import object_repository.LoginPage;
+
 public class BaseClass {
 	public WebDriver driver;
 	public static WebDriver sdriver;
 
 	@BeforeClass
-	public void openBro() {
-//		opening browser
-		
-		String bro = "edge";
-		
-		if (bro.equals("chrome")) {
+	public void openBro() throws IOException {
+		String browser = new FileUtility().getDataFromPropertiesFile("browser");
+
+		if (browser.equals("chrome")) {
 			driver = new ChromeDriver();
-		}else if (bro.equals("edge")) {
+		} else if (browser.equals("edge")) {
+			System.setProperty("webdriver.edge.driver", "./resources/msedgedriver.exe");
 			driver = new EdgeDriver();
-		}else if (bro.equals("firefox")) {
+		} else if (browser.equals("firefox")) {
 			driver = new FirefoxDriver();
-		}else {
+		} else {
+			// Default fallback browser
 			driver = new ChromeDriver();
 		}
-		
-		sdriver = driver;
-		
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-		driver.get("https://www.saucedemo.com/");
+
+		WebDriverUtility wdUtil = new WebDriverUtility(driver);
+		wdUtil.maximizeWindow();
+		wdUtil.waitForPageLoad();
 	}
 
 	@BeforeMethod
-	public void login() {
-//		login
-		driver.findElement(By.id("user-name")).sendKeys("standard_user");
-		driver.findElement(By.id("password")).sendKeys("secret_sauce");
-		driver.findElement(By.id("login-button")).submit();
+	public void login() throws IOException {
+		FileUtility fUtil = new FileUtility();
+
+		String URL = fUtil.getDataFromPropertiesFile("url");
+		String USERNAME = fUtil.getDataFromPropertiesFile("un");
+		String PASSWORD = fUtil.getDataFromPropertiesFile("pwd");
+
+		driver.get(URL);
+
+		LoginPage lp = new LoginPage(driver);
+
+		WebElement username = lp.getUsername();
+		WebElement password = lp.getPassword();
+		WebElement loginBtn = lp.getLoginButton();
+
+		username.sendKeys(USERNAME);
+		password.sendKeys(PASSWORD);
+		loginBtn.submit(); 
 	}
 
 	@AfterMethod
 	public void logOut() {
-//		logout
-		driver.findElement(By.id("react-burger-menu-btn")).click();
-		driver.findElement(By.id("logout_sidebar_link")).click();
-
+		WebElement profile = new HomePage(driver).getProfileIcon();
+		new WebDriverUtility(driver).hover(profile);
+		new HomePage(driver).getSignOutLink().click();
 	}
 
 	@AfterClass
 	public void closeBro() throws InterruptedException {
-		Thread.sleep(3000);
 		driver.quit();
 	}
 }
