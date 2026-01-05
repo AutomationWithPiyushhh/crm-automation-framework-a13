@@ -14,7 +14,7 @@
  * 7. Logout and close browser
  */
 
-package lead;
+package crm.vtiger.web.lead;
 
 import java.io.IOException;
 
@@ -28,8 +28,6 @@ import generic_utility.FileUtility;
 import object_repository.HomePage;
 
 public class LeadsTest extends BaseClass {
-
-//	public static void main(String[] args) throws InterruptedException, IOException {
 
 	@Test
 	public void createLeadsTest() throws IOException, InterruptedException {
